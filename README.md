@@ -4,9 +4,9 @@
 
 ## 最新版本
 
-**[v26.10.28](https://github.com/top-android/releases/releases/latest)** ·
-`lineage-21.0-20261028-UNOFFICIAL-cannon.zip` ·
-md5 `c6d46279fe8f42c0f90df9cfbb578a64`
+**[v26.10.29](https://github.com/top-android/releases/releases/latest)** ·
+`lineage-21.0-20261029-UNOFFICIAL-cannon.zip` ·
+md5 `27ae98e3dd558c2cc2593101a7df97a8`
 
 ## 刷机
 
