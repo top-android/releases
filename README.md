@@ -4,9 +4,10 @@
 
 ## 最新版本
 
-**[v26.10.29](https://github.com/top-android/releases/releases/latest)** ·
-`lineage-21.0-20261029-UNOFFICIAL-cannon.zip` ·
-md5 `27ae98e3dd558c2cc2593101a7df97a8`
+**[v26.11.2.1](https://github.com/top-android/releases/releases/latest)** ·（Android 16 / LineageOS 23.2）·
+`lineage-23.2-20261102-UNOFFICIAL-cannon-user.zip` ·
+size `1317318324`（1.32 GiB）· md5 `f3c1e86fdea5ff288cda380c29fc0fa1` ·
+sha256 `b78b36cdba68faa1456bd819f11d96fcd295e522a536018d818d2751d4c65cbe`
 
 ## 刷机
 
@@ -20,7 +21,7 @@ md5 `27ae98e3dd558c2cc2593101a7df97a8`
 
 ```powershell
 adb reboot sideload
-adb sideload lineage-21.0-XXXXXXXX-UNOFFICIAL-cannon.zip
+adb sideload lineage-23.2-XXXXXXXX-UNOFFICIAL-cannon-user.zip
 ```
 
 ### 首次刷机（从 MIUI 或别的 ROM 过来）
@@ -36,7 +37,7 @@ recovery 里：
 
 1. **Factory reset → Format data**（从 MIUI 过来必须清，加密格式不兼容）
 2. **Apply update → Apply from ADB**
-3. `adb sideload lineage-21.0-XXXXXXXX-UNOFFICIAL-cannon.zip`
+3. `adb sideload lineage-23.2-XXXXXXXX-UNOFFICIAL-cannon-user.zip`
 
 包里带着 boot / dtbo / vbmeta / system / vendor / product / system_ext，recovery 会一起写进去。
 
@@ -79,7 +80,7 @@ LineageOS 的 Updater 默认地址是
 
 ## 发布一版新 ROM 的流程
 
-1. 把 `lineage-21.0-<日期>-UNOFFICIAL-cannon.zip` 传到一个 GitHub Release：
+1. 把 `lineage-23.2-<日期>-UNOFFICIAL-cannon-user.zip` 传到一个 GitHub Release：
    `https://github.com/top-android/releases/releases/tag/<tag>`
 2. 改 `cannon.json`，写一条：
 
@@ -87,13 +88,13 @@ LineageOS 的 Updater 默认地址是
 {
   "response": [
     {
-      "datetime": 1793200000,
-      "filename": "lineage-21.0-20261027-UNOFFICIAL-cannon.zip",
-      "id": "任意唯一字符串",
+      "datetime": 1793615076,
+      "filename": "lineage-23.2-20261102-UNOFFICIAL-cannon-user.zip",
+      "id": "f3c1e86fdea5ff288cda380c29fc0fa1",
       "romtype": "unofficial",
-      "size": 1182507966,
-      "url": "https://github.com/top-android/releases/releases/download/20261027/lineage-21.0-20261027-UNOFFICIAL-cannon.zip",
-      "version": "21.0"
+      "size": 1317318324,
+      "url": "https://github.com/top-android/releases/releases/download/v26.11.2.1/lineage-23.2-20261102-UNOFFICIAL-cannon-user.zip",
+      "version": "23.2"
     }
   ]
 }
@@ -108,5 +109,5 @@ Updater 只认 `response` 里 `datetime` 最大的那条，所以每次覆盖写
 
 - `size` 和 `url` 必须对得上，Updater 下载完会校验大小。
 - jsDelivr 对分支内容有缓存（最长 12 小时）。想立刻生效可以改用 tag：
-  `https://cdn.jsdelivr.net/gh/top-android/releases@v20261027/cannon.json`
+  `https://cdn.jsdelivr.net/gh/top-android/releases@v26.11.2.1/cannon.json`
 - `raw.githubusercontent.com` 在国内经常连不上，不建议直接用。
