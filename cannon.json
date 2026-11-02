@@ -1,13 +1,13 @@
 {
   "response": [
     {
-      "datetime": 1793389891,
-      "filename": "lineage-22.2-20261030-UNOFFICIAL-cannon.zip",
-      "id": "d4946ac9f1c91f085e003f56d1cc5ef7",
+      "datetime": 1793615076,
+      "filename": "lineage-23.2-20261102-UNOFFICIAL-cannon-user.zip",
+      "id": "f3c1e86fdea5ff288cda380c29fc0fa1",
       "romtype": "unofficial",
-      "size": 1272887162,
-      "url": "https://github.com/top-android/releases/releases/download/v26.10.30/lineage-22.2-20261030-UNOFFICIAL-cannon.zip",
-      "version": "22.2"
+      "size": 1317318324,
+      "url": "https://github.com/top-android/releases/releases/download/v26.11.2.1/lineage-23.2-20261102-UNOFFICIAL-cannon-user.zip",
+      "version": "23.2"
     }
   ]
 }
