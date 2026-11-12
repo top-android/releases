@@ -75,35 +75,48 @@ boot / recovery / dtbo / vbmeta 是物理分区（bootloader 刷），system / v
 `https://cdn.jsdelivr.net/gh/top-android/releases@main/cannon.json`。
 
 LineageOS 的 Updater 默认地址是
-`https://download.lineageos.org/api/v1/{device}/{type}/{incr}`，
-返回的就是这种 `{"response":[...]}` 结构，所以换成静态 JSON 完全兼容。
+`https://download.lineageos.org/api/v1/{device}/{type}/{incr}`。
+
+**注意：23.x 起 Updater 被重写成 Kotlin 实现，返回结构变了** —— 不再是
+`{"response":[...]}`，而是**顶层数组**，每条带 `files[]`，见下面的发布流程。
+旧格式（`response` 对象）在 23.x 上会直接解析失败，界面显示「检查更新失败」。
+21/22 及更早的旧 Updater 只认 `response` 对象，这批设备请手动 sideload。
 
 ## 发布一版新 ROM 的流程
 
-1. 把 `lineage-23.2-<日期>-UNOFFICIAL-cannon-user.zip` 传到一个 GitHub Release：
+1. 把 `lineage-24.0-<日期>-UNOFFICIAL-cannon.zip` 传到一个 GitHub Release：
    `https://github.com/top-android/releases/releases/tag/<tag>`
-2. 改 `cannon.json`，写一条：
+2. 改 `cannon.json`，顶层写成数组：
 
 ```json
-{
-  "response": [
-    {
-      "datetime": 1793615076,
-      "filename": "lineage-23.2-20261102-UNOFFICIAL-cannon-user.zip",
-      "id": "f3c1e86fdea5ff288cda380c29fc0fa1",
-      "romtype": "unofficial",
-      "size": 1317318324,
-      "url": "https://github.com/top-android/releases/releases/download/v26.11.2.1/lineage-23.2-20261102-UNOFFICIAL-cannon-user.zip",
-      "version": "23.2"
-    }
-  ]
-}
+[
+  {
+    "datetime": 1794386678,
+    "type": "unofficial",
+    "version": "24.0",
+    "files": [
+      {
+        "filename": "lineage-24.0-20261111-UNOFFICIAL-cannon.zip",
+        "sha256": "b29b8f16464dcddddea810932c407dd37333f35c49527452d11280df8432ed5a",
+        "size": 1356085132,
+        "url": "https://github.com/top-android/releases/releases/download/v26.11.11/lineage-24.0-20261111-UNOFFICIAL-cannon.zip",
+        "os_patch_level": "2026-11-01",
+        "os_sdk_level": 37
+      }
+    ]
+  }
+]
 ```
 
-3. `git commit && git push`
+3. `git commit && git push`，然后刷新 jsDelivr 缓存（见「注意」）。
 
-Updater 只认 `response` 里 `datetime` 最大的那条，所以每次覆盖写一条即可；
-想留历史就多写几条，它自己挑最新的。
+字段要求（`NetworkUpdate.kt` / `UpdatesRepository.kt` 里的硬性过滤）：
+
+- `files[]` 每项**必填** `filename` / `sha256` / `size` / `url`；`sha256` 同时被当作下载 ID。
+- `os_sdk_level` 可省，但省了会被当成 0，`< 设备当前 SDK` 直接丢弃 —— 跨版本时必须写对。
+- `type` 必须等于设备的 `ro.lineage.releasetype`（`UNOFFICIAL`，比较忽略大小写）。
+- `datetime` 必须**大于**设备的 `ro.build.date.utc`，否则视为「不比当前新」。
+- 不需要 `id` / `romtype` 字段了（那是旧格式的）。
 
 ## 注意
 
