@@ -4,10 +4,13 @@
 
 ## 最新版本
 
-**[v26.11.2.1](https://github.com/top-android/releases/releases/latest)** ·（Android 16 / LineageOS 23.2）·
-`lineage-23.2-20261102-UNOFFICIAL-cannon-user.zip` ·
-size `1317318324`（1.32 GiB）· md5 `f3c1e86fdea5ff288cda380c29fc0fa1` ·
-sha256 `b78b36cdba68faa1456bd819f11d96fcd295e522a536018d818d2751d4c65cbe`
+**[v26.11.21](https://github.com/top-android/releases/releases/tag/v26.11.21)** ·（Android 17 / LineageOS 24.0）·
+`lineage-24.0-20261121-UNOFFICIAL-cannon.zip` ·
+size `1358491184`（1.31 GiB）·
+sha256 `73326fdcbc54dcaec3ec0e243eb65deb2622024c4aa6c4ae0d4859f370e3a9bb`
+
+同 tag 下另有：`boot-20261121.img`（无 KSU 内核，fastboot 直刷）、
+`SusfsNew.zip`（A17 + KernelSU-Next + SUSFS，AnyKernel3）。
 
 ## 刷机
 
@@ -91,15 +94,15 @@ LineageOS 的 Updater 默认地址是
 ```json
 [
   {
-    "datetime": 1794386678,
+    "datetime": 1795263199,
     "type": "unofficial",
     "version": "24.0",
     "files": [
       {
-        "filename": "lineage-24.0-20261111-UNOFFICIAL-cannon.zip",
-        "sha256": "b29b8f16464dcddddea810932c407dd37333f35c49527452d11280df8432ed5a",
-        "size": 1356085132,
-        "url": "https://github.com/top-android/releases/releases/download/v26.11.11/lineage-24.0-20261111-UNOFFICIAL-cannon.zip",
+        "filename": "lineage-24.0-20261121-UNOFFICIAL-cannon.zip",
+        "sha256": "73326fdcbc54dcaec3ec0e243eb65deb2622024c4aa6c4ae0d4859f370e3a9bb",
+        "size": 1358491184,
+        "url": "https://github.com/top-android/releases/releases/download/v26.11.21/lineage-24.0-20261121-UNOFFICIAL-cannon.zip",
         "os_patch_level": "2026-11-01",
         "os_sdk_level": 37
       }
