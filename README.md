@@ -4,13 +4,12 @@
 
 ## 最新版本
 
-**[v26.11.21](https://github.com/top-android/releases/releases/tag/v26.11.21)** ·（Android 17 / LineageOS 24.0）·
-`lineage-24.0-20261121-UNOFFICIAL-cannon.zip` ·
-size `1358491184`（1.31 GiB）·
-sha256 `73326fdcbc54dcaec3ec0e243eb65deb2622024c4aa6c4ae0d4859f370e3a9bb`
+**[v26.11.22](https://github.com/top-android/releases/releases/tag/v26.11.22)** ·（Android 17 / LineageOS 24.0）·
+`lineage-24.0-20261122-UNOFFICIAL-cannon.zip` ·
+size `1358901518`（1.36 GB）·
+sha256 `cd51c80809abd7d36afe7bf7f80557709a58a4cb232cabc6ffb8b876be74c18f`
 
-同 tag 下另有：`boot-20261121.img`（无 KSU 内核，fastboot 直刷）、
-`SusfsNew.zip`（A17 + KernelSU-Next + SUSFS，AnyKernel3）。
+本次内核无改动（与 2026.11.21 完全一致，仅编译时间戳不同），未单独提供 `boot.img` 与 KSU 内核包，可直接沿用上一版的 `boot-20261121.img` / `SusfsNew.zip`。
 
 ## 刷机
 
