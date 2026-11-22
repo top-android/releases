@@ -1,13 +1,13 @@
 [
   {
-    "datetime": 1795349939,
+    "datetime": 1795357825,
     "type": "unofficial",
     "version": "24.0",
     "files": [
       {
         "filename": "lineage-24.0-20261122-UNOFFICIAL-cannon.zip",
-        "sha256": "cd51c80809abd7d36afe7bf7f80557709a58a4cb232cabc6ffb8b876be74c18f",
-        "size": 1358901518,
+        "sha256": "8bd310206f94eb1e9d7e4db8fb31d76a8d33cfcce1cad52987ae15f5420cf2dc",
+        "size": 1358908579,
         "url": "https://github.com/top-android/releases/releases/download/v26.11.22/lineage-24.0-20261122-UNOFFICIAL-cannon.zip",
         "os_patch_level": "2026-11-01",
         "os_sdk_level": 37

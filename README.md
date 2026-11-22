@@ -6,8 +6,13 @@
 
 **[v26.11.22](https://github.com/top-android/releases/releases/tag/v26.11.22)** ·（Android 17 / LineageOS 24.0）·
 `lineage-24.0-20261122-UNOFFICIAL-cannon.zip` ·
-size `1358901518`（1.36 GB）·
-sha256 `cd51c80809abd7d36afe7bf7f80557709a58a4cb232cabc6ffb8b876be74c18f`
+size `1358908579`（1.36 GB）·
+sha256 `8bd310206f94eb1e9d7e4db8fb31d76a8d33cfcce1cad52987ae15f5420cf2dc`
+
+> 2026-11-22 22:44 重编（同一 tag，包内容已换）：
+> ① `libTEECommon.so` 回退 13.0.3——14.0.6 版会让 beanpod keymaster 在 `Initialize()` 崩、`/data` 解不开、卡 MI logo（Magisk 模块测不出来，keymaster 是 `early_hal`，比模块挂载早）；
+> ② `lineage.updater.uri` 移到 `/system/build.prop`（原来放 vendor 会被 init 按 SELinux 丢弃），系统更新可正常检查。
+> 已经刷过旧包的，可以只 fastbootd 刷 `vendor-2026.11.22-teefix.zip` 里的 `vendor.img` 救回来，但 OTA 修复要整包。
 
 本次内核无改动（与 2026.11.21 完全一致，仅编译时间戳不同），未单独提供 `boot.img` 与 KSU 内核包，可直接沿用上一版的 `boot-20261121.img` / `SusfsNew.zip`。
 
